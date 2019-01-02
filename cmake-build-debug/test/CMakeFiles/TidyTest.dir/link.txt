@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/TidyTest.dir/TidyTests.cpp.o  -o TidyTest ../lib/libgtestd.a ../lib/libgmock_maind.a ../lib/libgmockd.a ../lib/libgtestd.a -lpthread 

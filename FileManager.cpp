@@ -17,20 +17,16 @@ public:
     // takes in a pointer to folderpath, meaning an address value of filepath
     // whoever calls this method, will have to supply a pointer with no-&
     // and will get back a string
-    string listFilesInPath(const char *folderPath){
+    vector<string> listFilesInPath(const char *folderPath){
 
         DIR *dir = opendir(folderPath);
 
         struct dirent *entry;
-        string files;
+        vector<string> files;
 
         while((entry = readdir(dir)) != NULL){
             if(entry->d_name[0] != '.'){
-                if (files.empty()){
-                    files = string(entry->d_name);
-                }else{
-                    files += " " + string(entry->d_name);
-                }
+                files.push_back(string(entry->d_name));
             }
         }
 

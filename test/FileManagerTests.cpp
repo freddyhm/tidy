@@ -16,8 +16,7 @@ public:
 
 TEST_F(MockFileManager, ListFilesInPath){
     const char *filesDir = "/home/fhm/Desktop/FilesTest1/";
-
-    EXPECT_EQ(fileManager.listFilesInPath(filesDir), "test3.txt test4.txt test2.txt test1.txt");
+    ASSERT_THAT(fileManager.listFilesInPath(filesDir), ElementsAre("test3.txt", "test4.txt", "test2.txt", "test1.txt"));
 }
 
 TEST_F(MockFileManager, GetLastOpenedTimeForFile){

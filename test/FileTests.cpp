@@ -8,8 +8,12 @@ using namespace std;
 using namespace testing;
 
 
+TEST(FileTests, shouldReturnSetLastOpenedTime){
+   File file = File("file1", "Thu Oct 25 09:30:46 2018\n");
+   EXPECT_EQ ("Thu Oct 25 09:30:46 2018\n", file.getLastOpenedTime());
+}
 
-TEST(FileTests, CreateFile){
-   // File file = File("file1", "Thu Oct 25 09:30:46 2018\n");
-   EXPECT_EQ (18.0, 181);
+TEST(FileTests, shouldReturnSetFileName){
+   File file = File("file1", "Thu Oct 25 09:30:46 2018\n");
+   EXPECT_EQ ("file1", file.getName());
 }

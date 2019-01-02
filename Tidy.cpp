@@ -1,44 +1,34 @@
 #include <dirent.h>
 #include <sys/stat.h>
 #include <iostream>
+#include "FileManager.cpp"
+
 using namespace std;
 
 class Tidy{
+
 public:
-    bool exploreDir(const char *dir_name){
-        
-        if(dir_name == ""){            
-            return false; 
-        }
+int main()
+{
+    const char *filesDir = "/home/fhm-capra/Desktop/";
+    string oldDate = "Tue Dec 30 00:00:00 2018";
 
-        DIR *dir = opendir(dir_name);
+    FileManager *fileManager = new FileManager();
+    vector<string> allFiles = fileManager->listFilesInPath(filesDir);
+    int length = sizeof(allFiles)/sizeof(string);
+//    string oldFiles = fileManager->getOldFiles(oldDate, allFiles, length);
 
-        if(!dir){
-            return false;
-        }
 
-        struct dirent *entry;
-        struct stat info; 
+    if(fileManager == NULL){
+        return 0;
+    }else{
+       // cout << "HellO" << oldFiles;
+        delete fileManager;
+        return 1;
+    }
 
-        bool hasFiles = false; 
 
-        while((entry = readdir(dir)) != NULL){
-            if(entry->d_name[0] != '.'){
-                string path = string(dir_name) + "/" + string(entry->d_name);
-                stat(path.c_str(),&info);  
+}
 
-                if(info.st_mode && S_IFDIR){
-                    cout << "Entry = " << path << endl;
-                }
-                
-                hasFiles = true;
-                
-            }else{
-                return hasFiles;
-            }
-        }
-        
-        return true;
-    };
 
 };
