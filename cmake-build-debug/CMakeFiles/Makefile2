@@ -1008,7 +1008,7 @@ googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: googletest-build/goog
 googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make googletest-build/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles --progress-num=10,11 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles --progress-num=8,9 "Built target gmock_main"
 .PHONY : googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Include target in all.
@@ -1045,7 +1045,7 @@ clean: googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean
 googletest-build/googlemock/CMakeFiles/gmock.dir/all: googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f googletest-build/googlemock/CMakeFiles/gmock.dir/build.make googletest-build/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f googletest-build/googlemock/CMakeFiles/gmock.dir/build.make googletest-build/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles --progress-num=8,9 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles --progress-num=6,7 "Built target gmock"
 .PHONY : googletest-build/googlemock/CMakeFiles/gmock.dir/all
 
 # Include target in all.
@@ -1102,7 +1102,7 @@ googletest-build/googlemock/gtest/preinstall:
 googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/build.make googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/build.make googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles --progress-num=12,13 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles --progress-num=10,11 "Built target gtest"
 .PHONY : googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/all
 
 # Include target in all.
@@ -1139,7 +1139,7 @@ clean: googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/clean
 googletest-build/googlemock/gtest/CMakeFiles/gtest_main.dir/all: googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f googletest-build/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make googletest-build/googlemock/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f googletest-build/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make googletest-build/googlemock/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles --progress-num=14,15 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles --progress-num=12,13 "Built target gtest_main"
 .PHONY : googletest-build/googlemock/gtest/CMakeFiles/gtest_main.dir/all
 
 # Include target in all.
@@ -1173,18 +1173,12 @@ clean: googletest-build/googlemock/gtest/CMakeFiles/gtest_main.dir/clean
 # Directory level rules for directory test
 
 # Convenience name for "all" pass in the directory.
-test/all: test/CMakeFiles/TidyTest.dir/all
-test/all: test/CMakeFiles/FileManagerTests.dir/all
-test/all: test/CMakeFiles/FileTests.dir/all
-test/all: test/CMakeFiles/main.dir/all
+test/all: test/CMakeFiles/TidyTestAll.dir/all
 
 .PHONY : test/all
 
 # Convenience name for "clean" pass in the directory.
-test/clean: test/CMakeFiles/TidyTest.dir/clean
-test/clean: test/CMakeFiles/FileManagerTests.dir/clean
-test/clean: test/CMakeFiles/FileTests.dir/clean
-test/clean: test/CMakeFiles/main.dir/clean
+test/clean: test/CMakeFiles/TidyTestAll.dir/clean
 
 .PHONY : test/clean
 
@@ -1194,156 +1188,41 @@ test/preinstall:
 .PHONY : test/preinstall
 
 #=============================================================================
-# Target rules for target test/CMakeFiles/TidyTest.dir
+# Target rules for target test/CMakeFiles/TidyTestAll.dir
 
 # All Build rule for target.
-test/CMakeFiles/TidyTest.dir/all: googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
-test/CMakeFiles/TidyTest.dir/all: googletest-build/googlemock/CMakeFiles/gmock.dir/all
-test/CMakeFiles/TidyTest.dir/all: googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/all
-	$(MAKE) -f test/CMakeFiles/TidyTest.dir/build.make test/CMakeFiles/TidyTest.dir/depend
-	$(MAKE) -f test/CMakeFiles/TidyTest.dir/build.make test/CMakeFiles/TidyTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles --progress-num=6,7 "Built target TidyTest"
-.PHONY : test/CMakeFiles/TidyTest.dir/all
+test/CMakeFiles/TidyTestAll.dir/all: googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
+test/CMakeFiles/TidyTestAll.dir/all: googletest-build/googlemock/CMakeFiles/gmock.dir/all
+test/CMakeFiles/TidyTestAll.dir/all: googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/all
+	$(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/depend
+	$(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target TidyTestAll"
+.PHONY : test/CMakeFiles/TidyTestAll.dir/all
 
 # Include target in all.
-all: test/CMakeFiles/TidyTest.dir/all
+all: test/CMakeFiles/TidyTestAll.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-test/CMakeFiles/TidyTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles 8
-	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/TidyTest.dir/all
+test/CMakeFiles/TidyTestAll.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles 11
+	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/TidyTestAll.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles 0
-.PHONY : test/CMakeFiles/TidyTest.dir/rule
+.PHONY : test/CMakeFiles/TidyTestAll.dir/rule
 
 # Convenience name for target.
-TidyTest: test/CMakeFiles/TidyTest.dir/rule
+TidyTestAll: test/CMakeFiles/TidyTestAll.dir/rule
 
-.PHONY : TidyTest
-
-# clean rule for target.
-test/CMakeFiles/TidyTest.dir/clean:
-	$(MAKE) -f test/CMakeFiles/TidyTest.dir/build.make test/CMakeFiles/TidyTest.dir/clean
-.PHONY : test/CMakeFiles/TidyTest.dir/clean
+.PHONY : TidyTestAll
 
 # clean rule for target.
-clean: test/CMakeFiles/TidyTest.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target test/CMakeFiles/FileManagerTests.dir
-
-# All Build rule for target.
-test/CMakeFiles/FileManagerTests.dir/all: googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
-test/CMakeFiles/FileManagerTests.dir/all: googletest-build/googlemock/CMakeFiles/gmock.dir/all
-test/CMakeFiles/FileManagerTests.dir/all: googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/all
-	$(MAKE) -f test/CMakeFiles/FileManagerTests.dir/build.make test/CMakeFiles/FileManagerTests.dir/depend
-	$(MAKE) -f test/CMakeFiles/FileManagerTests.dir/build.make test/CMakeFiles/FileManagerTests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target FileManagerTests"
-.PHONY : test/CMakeFiles/FileManagerTests.dir/all
-
-# Include target in all.
-all: test/CMakeFiles/FileManagerTests.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-test/CMakeFiles/FileManagerTests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles 9
-	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/FileManagerTests.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles 0
-.PHONY : test/CMakeFiles/FileManagerTests.dir/rule
-
-# Convenience name for target.
-FileManagerTests: test/CMakeFiles/FileManagerTests.dir/rule
-
-.PHONY : FileManagerTests
+test/CMakeFiles/TidyTestAll.dir/clean:
+	$(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/clean
+.PHONY : test/CMakeFiles/TidyTestAll.dir/clean
 
 # clean rule for target.
-test/CMakeFiles/FileManagerTests.dir/clean:
-	$(MAKE) -f test/CMakeFiles/FileManagerTests.dir/build.make test/CMakeFiles/FileManagerTests.dir/clean
-.PHONY : test/CMakeFiles/FileManagerTests.dir/clean
-
-# clean rule for target.
-clean: test/CMakeFiles/FileManagerTests.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target test/CMakeFiles/FileTests.dir
-
-# All Build rule for target.
-test/CMakeFiles/FileTests.dir/all: googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
-test/CMakeFiles/FileTests.dir/all: googletest-build/googlemock/CMakeFiles/gmock.dir/all
-test/CMakeFiles/FileTests.dir/all: googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/all
-	$(MAKE) -f test/CMakeFiles/FileTests.dir/build.make test/CMakeFiles/FileTests.dir/depend
-	$(MAKE) -f test/CMakeFiles/FileTests.dir/build.make test/CMakeFiles/FileTests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles --progress-num=4,5 "Built target FileTests"
-.PHONY : test/CMakeFiles/FileTests.dir/all
-
-# Include target in all.
-all: test/CMakeFiles/FileTests.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-test/CMakeFiles/FileTests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles 8
-	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/FileTests.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles 0
-.PHONY : test/CMakeFiles/FileTests.dir/rule
-
-# Convenience name for target.
-FileTests: test/CMakeFiles/FileTests.dir/rule
-
-.PHONY : FileTests
-
-# clean rule for target.
-test/CMakeFiles/FileTests.dir/clean:
-	$(MAKE) -f test/CMakeFiles/FileTests.dir/build.make test/CMakeFiles/FileTests.dir/clean
-.PHONY : test/CMakeFiles/FileTests.dir/clean
-
-# clean rule for target.
-clean: test/CMakeFiles/FileTests.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target test/CMakeFiles/main.dir
-
-# All Build rule for target.
-test/CMakeFiles/main.dir/all: googletest-build/googlemock/gtest/CMakeFiles/gtest.dir/all
-	$(MAKE) -f test/CMakeFiles/main.dir/build.make test/CMakeFiles/main.dir/depend
-	$(MAKE) -f test/CMakeFiles/main.dir/build.make test/CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles --progress-num=16,17 "Built target main"
-.PHONY : test/CMakeFiles/main.dir/all
-
-# Include target in all.
-all: test/CMakeFiles/main.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-test/CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles 0
-.PHONY : test/CMakeFiles/main.dir/rule
-
-# Convenience name for target.
-main: test/CMakeFiles/main.dir/rule
-
-.PHONY : main
-
-# clean rule for target.
-test/CMakeFiles/main.dir/clean:
-	$(MAKE) -f test/CMakeFiles/main.dir/build.make test/CMakeFiles/main.dir/clean
-.PHONY : test/CMakeFiles/main.dir/clean
-
-# clean rule for target.
-clean: test/CMakeFiles/main.dir/clean
+clean: test/CMakeFiles/TidyTestAll.dir/clean
 
 .PHONY : clean
 

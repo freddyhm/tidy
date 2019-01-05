@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/fhm-capra/Desktop/Projects/Tidy/test/FileManagerTests.cpp" "/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/test/CMakeFiles/FileManagerTests.dir/FileManagerTests.cpp.o"
-  "/home/fhm-capra/Desktop/Projects/Tidy/test/TidyTests.cpp" "/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/test/CMakeFiles/FileManagerTests.dir/TidyTests.cpp.o"
+  "/home/fhm-capra/Desktop/Projects/Tidy/test/FileTests.cpp" "/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/test/CMakeFiles/FileManagerTests.dir/FileTests.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/FileManagerTests.dir/FileManagerTests.cpp.o"
-  "CMakeFiles/FileManagerTests.dir/TidyTests.cpp.o"
+  "CMakeFiles/FileManagerTests.dir/FileTests.cpp.o"
   "FileManagerTests.pdb"
   "FileManagerTests"
 )

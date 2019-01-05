@@ -56,6 +56,52 @@ CMAKE_BINARY_DIR = /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/opt/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/opt/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/opt/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/opt/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/opt/clion-2018.2.6/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/opt/clion-2018.2.6/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -88,52 +134,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/opt/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/opt/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/opt/clion-2018.2.6/bin/cmake/linux/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/opt/clion-2018.2.6/bin/cmake/linux/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/opt/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/opt/clion-2018.2.6/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,64 +168,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-test/CMakeFiles/TidyTest.dir/rule:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/TidyTest.dir/rule
-.PHONY : test/CMakeFiles/TidyTest.dir/rule
+test/CMakeFiles/TidyTestAll.dir/rule:
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/TidyTestAll.dir/rule
+.PHONY : test/CMakeFiles/TidyTestAll.dir/rule
 
 # Convenience name for target.
-TidyTest: test/CMakeFiles/TidyTest.dir/rule
+TidyTestAll: test/CMakeFiles/TidyTestAll.dir/rule
 
-.PHONY : TidyTest
+.PHONY : TidyTestAll
 
 # fast build rule for target.
-TidyTest/fast:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTest.dir/build.make test/CMakeFiles/TidyTest.dir/build
-.PHONY : TidyTest/fast
-
-# Convenience name for target.
-test/CMakeFiles/FileManagerTests.dir/rule:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/FileManagerTests.dir/rule
-.PHONY : test/CMakeFiles/FileManagerTests.dir/rule
-
-# Convenience name for target.
-FileManagerTests: test/CMakeFiles/FileManagerTests.dir/rule
-
-.PHONY : FileManagerTests
-
-# fast build rule for target.
-FileManagerTests/fast:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/FileManagerTests.dir/build.make test/CMakeFiles/FileManagerTests.dir/build
-.PHONY : FileManagerTests/fast
-
-# Convenience name for target.
-test/CMakeFiles/FileTests.dir/rule:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/FileTests.dir/rule
-.PHONY : test/CMakeFiles/FileTests.dir/rule
-
-# Convenience name for target.
-FileTests: test/CMakeFiles/FileTests.dir/rule
-
-.PHONY : FileTests
-
-# fast build rule for target.
-FileTests/fast:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/FileTests.dir/build.make test/CMakeFiles/FileTests.dir/build
-.PHONY : FileTests/fast
-
-# Convenience name for target.
-test/CMakeFiles/main.dir/rule:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/main.dir/rule
-.PHONY : test/CMakeFiles/main.dir/rule
-
-# Convenience name for target.
-main: test/CMakeFiles/main.dir/rule
-
-.PHONY : main
-
-# fast build rule for target.
-main/fast:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/main.dir/build.make test/CMakeFiles/main.dir/build
-.PHONY : main/fast
+TidyTestAll/fast:
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/build
+.PHONY : TidyTestAll/fast
 
 FileManagerTests.o: FileManagerTests.cpp.o
 
@@ -233,7 +188,7 @@ FileManagerTests.o: FileManagerTests.cpp.o
 
 # target to build an object file
 FileManagerTests.cpp.o:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/FileManagerTests.dir/build.make test/CMakeFiles/FileManagerTests.dir/FileManagerTests.cpp.o
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/FileManagerTests.cpp.o
 .PHONY : FileManagerTests.cpp.o
 
 FileManagerTests.i: FileManagerTests.cpp.i
@@ -242,7 +197,7 @@ FileManagerTests.i: FileManagerTests.cpp.i
 
 # target to preprocess a source file
 FileManagerTests.cpp.i:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/FileManagerTests.dir/build.make test/CMakeFiles/FileManagerTests.dir/FileManagerTests.cpp.i
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/FileManagerTests.cpp.i
 .PHONY : FileManagerTests.cpp.i
 
 FileManagerTests.s: FileManagerTests.cpp.s
@@ -251,7 +206,7 @@ FileManagerTests.s: FileManagerTests.cpp.s
 
 # target to generate assembly for a file
 FileManagerTests.cpp.s:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/FileManagerTests.dir/build.make test/CMakeFiles/FileManagerTests.dir/FileManagerTests.cpp.s
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/FileManagerTests.cpp.s
 .PHONY : FileManagerTests.cpp.s
 
 FileTests.o: FileTests.cpp.o
@@ -260,7 +215,7 @@ FileTests.o: FileTests.cpp.o
 
 # target to build an object file
 FileTests.cpp.o:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/FileTests.dir/build.make test/CMakeFiles/FileTests.dir/FileTests.cpp.o
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/FileTests.cpp.o
 .PHONY : FileTests.cpp.o
 
 FileTests.i: FileTests.cpp.i
@@ -269,7 +224,7 @@ FileTests.i: FileTests.cpp.i
 
 # target to preprocess a source file
 FileTests.cpp.i:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/FileTests.dir/build.make test/CMakeFiles/FileTests.dir/FileTests.cpp.i
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/FileTests.cpp.i
 .PHONY : FileTests.cpp.i
 
 FileTests.s: FileTests.cpp.s
@@ -278,7 +233,7 @@ FileTests.s: FileTests.cpp.s
 
 # target to generate assembly for a file
 FileTests.cpp.s:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/FileTests.dir/build.make test/CMakeFiles/FileTests.dir/FileTests.cpp.s
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/FileTests.cpp.s
 .PHONY : FileTests.cpp.s
 
 TidyTests.o: TidyTests.cpp.o
@@ -287,8 +242,7 @@ TidyTests.o: TidyTests.cpp.o
 
 # target to build an object file
 TidyTests.cpp.o:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTest.dir/build.make test/CMakeFiles/TidyTest.dir/TidyTests.cpp.o
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/FileManagerTests.dir/build.make test/CMakeFiles/FileManagerTests.dir/TidyTests.cpp.o
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/TidyTests.cpp.o
 .PHONY : TidyTests.cpp.o
 
 TidyTests.i: TidyTests.cpp.i
@@ -297,8 +251,7 @@ TidyTests.i: TidyTests.cpp.i
 
 # target to preprocess a source file
 TidyTests.cpp.i:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTest.dir/build.make test/CMakeFiles/TidyTest.dir/TidyTests.cpp.i
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/FileManagerTests.dir/build.make test/CMakeFiles/FileManagerTests.dir/TidyTests.cpp.i
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/TidyTests.cpp.i
 .PHONY : TidyTests.cpp.i
 
 TidyTests.s: TidyTests.cpp.s
@@ -307,8 +260,7 @@ TidyTests.s: TidyTests.cpp.s
 
 # target to generate assembly for a file
 TidyTests.cpp.s:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTest.dir/build.make test/CMakeFiles/TidyTest.dir/TidyTests.cpp.s
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/FileManagerTests.dir/build.make test/CMakeFiles/FileManagerTests.dir/TidyTests.cpp.s
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/TidyTests.cpp.s
 .PHONY : TidyTests.cpp.s
 
 main.o: main.cpp.o
@@ -317,7 +269,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/main.dir/build.make test/CMakeFiles/main.dir/main.cpp.o
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -326,7 +278,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/main.dir/build.make test/CMakeFiles/main.dir/main.cpp.i
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -335,7 +287,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/main.dir/build.make test/CMakeFiles/main.dir/main.cpp.s
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -344,17 +296,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... TidyTest"
+	@echo "... install/strip"
+	@echo "... install/local"
+	@echo "... install"
+	@echo "... list_install_components"
+	@echo "... TidyTestAll"
 	@echo "... test"
-	@echo "... FileManagerTests"
-	@echo "... FileTests"
-	@echo "... main"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... install/strip"
-	@echo "... list_install_components"
-	@echo "... install"
-	@echo "... install/local"
 	@echo "... FileManagerTests.o"
 	@echo "... FileManagerTests.i"
 	@echo "... FileManagerTests.s"

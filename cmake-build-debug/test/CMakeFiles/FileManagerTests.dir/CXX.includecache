@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/fhm-capra/Desktop/Projects/Tidy/File.cpp
+string
+-
+
 /home/fhm-capra/Desktop/Projects/Tidy/FileManager.cpp
 string
 -
@@ -35,6 +39,18 @@ string
 -
 ../FileManager.cpp
 /home/fhm-capra/Desktop/Projects/Tidy/FileManager.cpp
+stdio.h
+-
+fstream
+-
+
+/home/fhm-capra/Desktop/Projects/Tidy/test/FileTests.cpp
+gtest/gtest.h
+/home/fhm-capra/Desktop/Projects/Tidy/test/gtest/gtest.h
+string
+-
+../File.cpp
+/home/fhm-capra/Desktop/Projects/Tidy/File.cpp
 stdio.h
 -
 fstream
@@ -486,6 +502,8 @@ stdlib.h
 string.h
 -
 memory
+-
+type_traits
 -
 sys/types.h
 -

@@ -44,10 +44,9 @@ test/CMakeFiles/FileManagerTests.dir/FileManagerTests.cpp.o
  googletest-src/googletest/include/gtest/internal/gtest-port.h
  googletest-src/googletest/include/gtest/internal/gtest-string.h
  googletest-src/googletest/include/gtest/internal/gtest-type-util.h
-test/CMakeFiles/FileManagerTests.dir/TidyTests.cpp.o
- ..//Tidy.cpp
- ../FileManager.cpp
- /home/fhm-capra/Desktop/Projects/Tidy/test/TidyTests.cpp
+test/CMakeFiles/FileManagerTests.dir/FileTests.cpp.o
+ /home/fhm-capra/Desktop/Projects/Tidy/File.cpp
+ /home/fhm-capra/Desktop/Projects/Tidy/test/FileTests.cpp
  googletest-src/googletest/include/gtest/gtest-death-test.h
  googletest-src/googletest/include/gtest/gtest-matchers.h
  googletest-src/googletest/include/gtest/gtest-message.h

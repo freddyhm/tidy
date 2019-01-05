@@ -10,8 +10,8 @@ using namespace testing;
 
 
 TEST(TidyTests, shouldStartTidy){
- //   Tidy test = Tidy();
-
+    Tidy test = Tidy();
+    test.main();
     EXPECT_EQ (0, 1);
 }
 

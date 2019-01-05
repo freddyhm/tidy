@@ -49,7 +49,7 @@ public:
         return ctime(&info.st_atime);
     }
 
-    vector<string> getOldFiles(string oldDate, string *files, int size){
+    vector<string> getOldFiles(string oldDate, vector<string> files){
 
         // convert oldDate to date
         struct tm oldDateTm;
@@ -61,7 +61,7 @@ public:
         vector<string> oldFiles;
         int emptyArrPos = 0;
         
-        for(int i =0; i < size; i++){
+        for(int i =0; i < files.size(); i++){
             struct tm tmFile;
             istringstream issFile(files[i]);
             issFile >> get_time(&tmFile, "%a %b %d %H:%M:%S %Y");

@@ -70,29 +70,29 @@ test/CMakeFiles/FileManagerTests.dir/FileManagerTests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FileManagerTests.dir/FileManagerTests.cpp.s"
 	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fhm-capra/Desktop/Projects/Tidy/test/FileManagerTests.cpp -o CMakeFiles/FileManagerTests.dir/FileManagerTests.cpp.s
 
-test/CMakeFiles/FileManagerTests.dir/TidyTests.cpp.o: test/CMakeFiles/FileManagerTests.dir/flags.make
-test/CMakeFiles/FileManagerTests.dir/TidyTests.cpp.o: ../test/TidyTests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/CMakeFiles/FileManagerTests.dir/TidyTests.cpp.o"
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FileManagerTests.dir/TidyTests.cpp.o -c /home/fhm-capra/Desktop/Projects/Tidy/test/TidyTests.cpp
+test/CMakeFiles/FileManagerTests.dir/FileTests.cpp.o: test/CMakeFiles/FileManagerTests.dir/flags.make
+test/CMakeFiles/FileManagerTests.dir/FileTests.cpp.o: ../test/FileTests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/CMakeFiles/FileManagerTests.dir/FileTests.cpp.o"
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FileManagerTests.dir/FileTests.cpp.o -c /home/fhm-capra/Desktop/Projects/Tidy/test/FileTests.cpp
 
-test/CMakeFiles/FileManagerTests.dir/TidyTests.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FileManagerTests.dir/TidyTests.cpp.i"
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fhm-capra/Desktop/Projects/Tidy/test/TidyTests.cpp > CMakeFiles/FileManagerTests.dir/TidyTests.cpp.i
+test/CMakeFiles/FileManagerTests.dir/FileTests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FileManagerTests.dir/FileTests.cpp.i"
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fhm-capra/Desktop/Projects/Tidy/test/FileTests.cpp > CMakeFiles/FileManagerTests.dir/FileTests.cpp.i
 
-test/CMakeFiles/FileManagerTests.dir/TidyTests.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FileManagerTests.dir/TidyTests.cpp.s"
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fhm-capra/Desktop/Projects/Tidy/test/TidyTests.cpp -o CMakeFiles/FileManagerTests.dir/TidyTests.cpp.s
+test/CMakeFiles/FileManagerTests.dir/FileTests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FileManagerTests.dir/FileTests.cpp.s"
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fhm-capra/Desktop/Projects/Tidy/test/FileTests.cpp -o CMakeFiles/FileManagerTests.dir/FileTests.cpp.s
 
 # Object files for target FileManagerTests
 FileManagerTests_OBJECTS = \
 "CMakeFiles/FileManagerTests.dir/FileManagerTests.cpp.o" \
-"CMakeFiles/FileManagerTests.dir/TidyTests.cpp.o"
+"CMakeFiles/FileManagerTests.dir/FileTests.cpp.o"
 
 # External object files for target FileManagerTests
 FileManagerTests_EXTERNAL_OBJECTS =
 
 test/FileManagerTests: test/CMakeFiles/FileManagerTests.dir/FileManagerTests.cpp.o
-test/FileManagerTests: test/CMakeFiles/FileManagerTests.dir/TidyTests.cpp.o
+test/FileManagerTests: test/CMakeFiles/FileManagerTests.dir/FileTests.cpp.o
 test/FileManagerTests: test/CMakeFiles/FileManagerTests.dir/build.make
 test/FileManagerTests: lib/libgtestd.a
 test/FileManagerTests: lib/libgmock_maind.a

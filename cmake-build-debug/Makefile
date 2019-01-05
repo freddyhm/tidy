@@ -584,56 +584,17 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
-# Target rules for targets named TidyTest
+# Target rules for targets named TidyTestAll
 
 # Build rule for target.
-TidyTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TidyTest
-.PHONY : TidyTest
+TidyTestAll: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TidyTestAll
+.PHONY : TidyTestAll
 
 # fast build rule for target.
-TidyTest/fast:
-	$(MAKE) -f test/CMakeFiles/TidyTest.dir/build.make test/CMakeFiles/TidyTest.dir/build
-.PHONY : TidyTest/fast
-
-#=============================================================================
-# Target rules for targets named FileManagerTests
-
-# Build rule for target.
-FileManagerTests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 FileManagerTests
-.PHONY : FileManagerTests
-
-# fast build rule for target.
-FileManagerTests/fast:
-	$(MAKE) -f test/CMakeFiles/FileManagerTests.dir/build.make test/CMakeFiles/FileManagerTests.dir/build
-.PHONY : FileManagerTests/fast
-
-#=============================================================================
-# Target rules for targets named FileTests
-
-# Build rule for target.
-FileTests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 FileTests
-.PHONY : FileTests
-
-# fast build rule for target.
-FileTests/fast:
-	$(MAKE) -f test/CMakeFiles/FileTests.dir/build.make test/CMakeFiles/FileTests.dir/build
-.PHONY : FileTests/fast
-
-#=============================================================================
-# Target rules for targets named main
-
-# Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main
-.PHONY : main
-
-# fast build rule for target.
-main/fast:
-	$(MAKE) -f test/CMakeFiles/main.dir/build.make test/CMakeFiles/main.dir/build
-.PHONY : main/fast
+TidyTestAll/fast:
+	$(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/build
+.PHONY : TidyTestAll/fast
 
 # Help Target
 help:
@@ -680,10 +641,7 @@ help:
 	@echo "... gmock"
 	@echo "... gtest"
 	@echo "... gtest_main"
-	@echo "... TidyTest"
-	@echo "... FileManagerTests"
-	@echo "... FileTests"
-	@echo "... main"
+	@echo "... TidyTestAll"
 .PHONY : help
 
 

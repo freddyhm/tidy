@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/FileManagerTests.dir/FileManagerTests.cpp.o CMakeFiles/FileManagerTests.dir/TidyTests.cpp.o  -o FileManagerTests ../lib/libgtestd.a ../lib/libgmock_maind.a ../lib/libgmockd.a ../lib/libgtestd.a -lpthread 
+/usr/bin/c++  -g   CMakeFiles/FileManagerTests.dir/FileManagerTests.cpp.o CMakeFiles/FileManagerTests.dir/FileTests.cpp.o  -o FileManagerTests ../lib/libgtestd.a ../lib/libgmock_maind.a ../lib/libgmockd.a ../lib/libgtestd.a -lpthread 

@@ -1,0 +1,5 @@
+Testing tidy class
+Scenario: the tidy class should clean up my desktop when run. 
+            Given the file manager created
+            When the run method is activated 
+            Then the app will cyle through all my desktop files and place older ones in proper folder

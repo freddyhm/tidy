@@ -11,13 +11,11 @@ public:
 int main()
 {
     const char *filesDir = "/home/fhm-capra/Desktop/";
-    string oldDate = "Tue Dec 30 00:00:00 2018";
+    string oldDate = "Sat Jan 03 00:00:00 2019";
 
     FileManager *fileManager = new FileManager();
     vector<string> allFiles = fileManager->listFilesInPath(filesDir);
-    int length = sizeof(allFiles)/sizeof(string);
-//    string oldFiles = fileManager->getOldFiles(oldDate, allFiles, length);
-
+    vector<string> oldFiles = fileManager->getOldFiles(oldDate, allFiles);
 
     if(fileManager == NULL){
         return 0;
