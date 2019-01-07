@@ -12,6 +12,12 @@ using namespace testing;
 class MockFileManager : public Test {
 public:
     FileManager fileManager;
+
+    File file1 = File("File1", "Thu Oct 25 09:30:46 2018\n");
+    File file2 = File("File2", "Tue Oct 30 07:57:22 2018\n");
+    File file3 = File("File3", "Tue Oct 30 08:50:41 2018\n");
+    File file4 = File("File4", "Tue Oct 30 08:50:47 2018\n");
+    vector<File> files{file1, file2, file3, file4};
 };
 
 TEST_F(MockFileManager, ListFilesInPath){
@@ -28,8 +34,7 @@ TEST_F(MockFileManager, GetLastOpenedTimeForFile){
 
 TEST_F(MockFileManager, GetFilesOlderThanSetDate){
     string setDate = "Tue Oct 30 00:00:00 2018";
-    vector<string> files{"Thu Oct 25 09:30:46 2018\n", "Tue Oct 30 07:57:22 2018\n", "Tue Oct 30 08:50:41 2018\n", "Tue Oct 30 08:50:47 2018\n"};
-    vector<string> oldFiles = fileManager.getOldFiles(setDate, files);
+    vector<File> oldFiles = fileManager.getOldFiles(setDate, files);
 
     ASSERT_THAT(oldFiles, ElementsAre("Tue Oct 30 07:57:22 2018\n", "Tue Oct 30 08:50:41 2018\n", "Tue Oct 30 08:50:47 2018\n"));
 }

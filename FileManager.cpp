@@ -8,6 +8,7 @@
 #include <sstream>
 #include <vector>
 #include <cstdio>
+#include "File.cpp"
 
 using namespace std;
 
@@ -17,16 +18,17 @@ public:
     // takes in a pointer to folderpath, meaning an address value of filepath
     // whoever calls this method, will have to supply a pointer with no-&
     // and will get back a string
-    vector<string> listFilesInPath(const char *folderPath){
+    vector<File> listFilesInPath(const char *folderPath){
 
         DIR *dir = opendir(folderPath);
 
         struct dirent *entry;
-        vector<string> files;
+        vector<File> files;
 
         while((entry = readdir(dir)) != NULL){
             if(entry->d_name[0] != '.'){
-                files.push_back(string(entry->d_name));
+                string fullPath =+ "/" + string(entry->d_name);
+                files.push_back(File(string(entry->d_name), getLastOpenedTime(fullPath.c_str())));
             }
         }
 
@@ -49,7 +51,7 @@ public:
         return ctime(&info.st_atime);
     }
 
-    vector<string> getOldFiles(string oldDate, vector<string> files){
+    vector<File> getOldFiles(string oldDate, vector<File> files){
 
         // convert oldDate to date
         struct tm oldDateTm;
@@ -58,12 +60,12 @@ public:
         time_t oldDateTime = mktime(&oldDateTm);
 
         // anything that is older than this date will be added to a vector
-        vector<string> oldFiles;
+        vector<File> oldFiles;
         int emptyArrPos = 0;
         
         for(int i =0; i < files.size(); i++){
             struct tm tmFile;
-            istringstream issFile(files[i]);
+            istringstream issFile(files[i].getLastOpenedTime());
             issFile >> get_time(&tmFile, "%a %b %d %H:%M:%S %Y");
             time_t timeFile = mktime(&tmFile);
 

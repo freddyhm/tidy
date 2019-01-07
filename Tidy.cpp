@@ -14,8 +14,8 @@ int main()
     string oldDate = "Sat Jan 03 00:00:00 2019";
 
     FileManager *fileManager = new FileManager();
-    vector<string> allFiles = fileManager->listFilesInPath(filesDir);
-    vector<string> oldFiles = fileManager->getOldFiles(oldDate, allFiles);
+    vector<File> allFiles = fileManager->listFilesInPath(filesDir);
+    vector<File> oldFiles = fileManager->getOldFiles(oldDate, allFiles);
 
     if(fileManager == NULL){
         return 0;
