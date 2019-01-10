@@ -7,7 +7,7 @@
 #IncludeRegexTransform: 
 
 /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/googletest-src/googletest/src/gtest_main.cc
-stdio.h
+cstdio
 -
 gtest/gtest.h
 /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/googletest-src/googletest/src/gtest/gtest.h
@@ -180,6 +180,8 @@ map
 set
 -
 string
+-
+type_traits
 -
 vector
 -

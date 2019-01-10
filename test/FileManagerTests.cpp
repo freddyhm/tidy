@@ -13,16 +13,16 @@ class MockFileManager : public Test {
 public:
     FileManager fileManager;
 
-    File file1 = File("File1", "Thu Oct 25 09:30:46 2018\n");
-    File file2 = File("File2", "Tue Oct 30 07:57:22 2018\n");
-    File file3 = File("File3", "Tue Oct 30 08:50:41 2018\n");
-    File file4 = File("File4", "Tue Oct 30 08:50:47 2018\n");
-    vector<File> files{file1, file2, file3, file4};
+    File file1 = File("test2.txt", "Thu Oct 25 09:30:46 2018\n");
+    File file2 = File("test3.txt", "Tue Oct 30 07:57:22 2018\n");
+    File file3 = File("test4.txt", "Tue Oct 30 08:50:41 2018\n");
+    File file4 = File("test1.txt", "Tue Oct 30 08:50:47 2018\n");
+    vector<File> files{file2, file3, file4, file1};
 };
 
 TEST_F(MockFileManager, ListFilesInPath){
     const char *filesDir = "/home/fhm-capra/Desktop/FilesTest1/";
-    ASSERT_THAT(fileManager.listFilesInPath(filesDir), ElementsAre("test2.txt", "test3.txt", "test4.txt", "test1.txt"));
+    ASSERT_THAT(fileManager.listFilesInPath(filesDir), ElementsAre(file2, file3, file4, file1));
 }
 
 TEST_F(MockFileManager, GetLastOpenedTimeForFile){

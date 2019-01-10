@@ -5,6 +5,8 @@
 #ifndef FILE_H
 #define FILE_H
 
+#include <string>
+
 class File {
 private:
     std::string name;
