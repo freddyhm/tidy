@@ -10,6 +10,7 @@ Current branch master is up to date.
 [ 55%] No test step for 'googletest'
 [ 66%] Completed 'googletest'
 [100%] Built target googletest
+-- Could NOT find Boost
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug

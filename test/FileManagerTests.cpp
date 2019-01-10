@@ -12,42 +12,44 @@ using namespace testing;
 class MockFileManager : public Test {
 public:
     FileManager fileManager;
-
-    File file1 = File("test2.txt", "Thu Oct 25 09:30:46 2018\n");
-    File file2 = File("test3.txt", "Tue Oct 30 07:57:22 2018\n");
-    File file3 = File("test4.txt", "Tue Oct 30 08:50:41 2018\n");
-    File file4 = File("test1.txt", "Tue Oct 30 08:50:47 2018\n");
-    vector<File> files{file2, file3, file4, file1};
 };
 
 TEST_F(MockFileManager, ListFilesInPath){
     const char *filesDir = "/home/fhm-capra/Desktop/FilesTest1/";
-
     vector<File> listedFiles = fileManager.listFilesInPath(filesDir);
-    string fileNames [5] = {listedFiles.at(0).getName(), listedFiles.at(1).getName(), listedFiles.at(2).getName(), listedFiles.at(3).getName(), listedFiles.at(4).getName()};
-    ASSERT_THAT(fileNames, ElementsAre("test2.txt"));
+    string fileNames [4] = {listedFiles.at(0).getName(), listedFiles.at(1).getName(), listedFiles.at(2).getName(), listedFiles.at(3).getName()};
+    ASSERT_THAT(fileNames, ElementsAre("test2.txt", "test3.txt", "test4.txt", "test1.txt"));
 }
 
 TEST_F(MockFileManager, GetLastOpenedTimeForFile){
     const char *filePath = "/home/fhm-capra/Desktop/FilesTest1/test1.txt";
     string lastOpenedStr(fileManager.getLastOpenedTime(filePath));
 
-    EXPECT_EQ(lastOpenedStr, "Thu Oct 25 09:30:46 2018\n");
+    EXPECT_EQ(lastOpenedStr, "2018-Oct-25 13:30:46");
 }
 
 TEST_F(MockFileManager, GetFilesOlderThanSetDate){
-    string setDate = "Tue Oct 30 00:00:00 2018";
-    vector<File> oldFiles = fileManager.getOldFiles(setDate, files);
-    string lastOpenedTimes [5] = {oldFiles.at(0).getLastOpenedTime(),oldFiles.at(1).getLastOpenedTime(), oldFiles.at(2).getLastOpenedTime(), oldFiles.at(3).getLastOpenedTime(), oldFiles.at(4).getLastOpenedTime()};
 
-    ASSERT_THAT(lastOpenedTimes, ElementsAre("Tue Oct 30 07:57:22 2018\n", "Tue Oct 30 08:50:41 2018\n", "Tue Oct 30 08:50:47 2018\n"));
+    File file1 = File("test2.txt", "2018-Oct-25 09:30:46");
+    File file2 = File("test3.txt", "2018-Oct-30 07:57:22");
+    File file3 = File("test4.txt", "2018-Oct-01 08:50:41");
+    File file4 = File("test1.txt", "2018-Oct-10 08:50:47");
+    vector<File> files{file2, file3, file4, file1};
+
+    string setDate = "2018-Oct-20 13:30:46";
+    vector<File> oldFiles = fileManager.getOldFiles(setDate, files);
+    string lastOpenedTimes [2] = {oldFiles.at(0).getName(), oldFiles.at(1).getName()};
+
+    ASSERT_THAT(lastOpenedTimes, ElementsAre(file3.getName(), file4.getName()));
 }
 
 TEST_F(MockFileManager, MoveFilesToFolder){
 
-    string fileNames[] = {"t1.txt", "t2.txt"};
-    string path = "/home/fhm-capra/Desktop/FilesTest2/";
-    int length = sizeof(fileNames)/sizeof(string);
+    File file1 = File("license_agreement.txt", "2018-Jul-27 12:27:46");
+    File file2 = File("test111.sh", "2018-Jul-27 12:27:46");
+    vector<File> files{file1, file2};
 
-    EXPECT_EQ(fileManager.moveFilesToFolder(fileNames, length, path), true);
+    string destPath = "/home/fhm-capra/Desktop/FilesTest2/";
+
+    EXPECT_EQ(fileManager.moveFilesToFolder(files, destPath), true);
 }

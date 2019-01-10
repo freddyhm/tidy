@@ -8,6 +8,7 @@
 #include <ctime>
 #include <sstream>
 #include <cstdio>
+#include <boost/date_time/posix_time/posix_time.hpp>
 
 
 using namespace std;
@@ -24,8 +25,9 @@ vector<File> FileManager::listFilesInPath(const char *folderPath){
 
     while((entry = readdir(dir)) != NULL){
         if(entry->d_name[0] != '.'){
-            string fullPath =+ "/" + string(entry->d_name);
-            files.push_back(File(string(entry->d_name), getLastOpenedTime(fullPath.c_str())));
+            string fileName = string(entry->d_name);
+            string fullPath = string(folderPath) + fileName;
+            files.push_back(File(fileName, getLastOpenedTime(fullPath.c_str())));
         }
     }
 
@@ -37,7 +39,7 @@ vector<File> FileManager::listFilesInPath(const char *folderPath){
 // whoever calls this method, will have to supply a pointer
 // and will get back a char pointer meaning that to access it i'll just need no &
 // if I use * it will point to the first element only ---> per vid
-char * FileManager::getLastOpenedTime(const char *filePath){
+string FileManager::getLastOpenedTime(const char *filePath){
 
     struct stat info;
 
@@ -45,28 +47,25 @@ char * FileManager::getLastOpenedTime(const char *filePath){
     // and stat is expecting a pointer of char
     stat(filePath, &info);
 
-    return ctime(&info.st_atime);
+    boost::posix_time::ptime fileLastOpenedPTime = boost::posix_time::from_time_t(info.st_atime);
+    std::string fileLastOpenedTime = boost::posix_time::to_simple_string(fileLastOpenedPTime);
+
+    return fileLastOpenedTime;
 }
 
 vector<File> FileManager::getOldFiles(string oldDate, vector<File> files){
 
-    // convert oldDate to date
-    struct tm oldDateTm;
-    istringstream issOldDate(oldDate);
-    issOldDate >> get_time(&oldDateTm, "%a %b %d %H:%M:%S %Y");
-    time_t oldDateTime = mktime(&oldDateTm);
+    // convert oldDate string to ptime
+    boost::posix_time::ptime oldDatePtime = boost::posix_time::time_from_string(oldDate);
 
     // anything that is older than this date will be added to a vector
     vector<File> oldFiles;
-    int emptyArrPos = 0;
 
     for(int i =0; i < files.size(); i++){
-        struct tm tmFile;
-        istringstream issFile(files[i].getLastOpenedTime());
-        issFile >> get_time(&tmFile, "%a %b %d %H:%M:%S %Y");
-        time_t timeFile = mktime(&tmFile);
 
-        if(timeFile >= oldDateTime){
+        boost::posix_time::ptime lastOpenedPTime = boost::posix_time::time_from_string(files[i].getLastOpenedTime());
+
+        if(lastOpenedPTime < oldDatePtime){
             oldFiles.push_back(files[i]);
         }
     }
@@ -74,11 +73,11 @@ vector<File> FileManager::getOldFiles(string oldDate, vector<File> files){
     return oldFiles;
 }
 
-bool FileManager::moveFilesToFolder(string *fileNames, int size, string folderPath){
+bool FileManager::moveFilesToFolder(vector<File> files, string folderPath){
 
-    for(int i = 0; i < size; i++){
-        string newPath = folderPath + fileNames[i];
-        string currentPath = "/home/fhm/Desktop/" + fileNames[i];
+    for(int i = 0; i < files.size(); i++){
+        string newPath = folderPath + files[i].getName();
+        string currentPath = "/home/fhm-capra/Desktop/" + files[i].getName();
         rename(currentPath.c_str(), newPath.c_str());
     }
 

@@ -1,7 +1,9 @@
+#include "FileManager.h"
 #include <dirent.h>
 #include <sys/stat.h>
 #include <iostream>
-#include "FileManager.h"
+#include <boost/date_time/posix_time/posix_time.hpp>
+#include <boost/date_time/gregorian/gregorian.hpp>
 
 using namespace std;
 
@@ -11,16 +13,30 @@ public:
 int main()
 {
     const char *filesDir = "/home/fhm-capra/Desktop/";
-    string oldDate = "Sat Jan 03 00:00:00 2019";
+    const string destPath = "/home/fhm-capra/Desktop/OldFiles/";
+
+    time_t now = time(0);
+    boost::gregorian::days dd(5);
+
+    // set the defining date to consider a file old or recent
+    boost::posix_time::ptime nowPTime = boost::posix_time::from_time_t(now);
+    boost::posix_time::ptime threeDaysPTime = nowPTime - dd;
+    std::string oldDate = boost::posix_time::to_simple_string(threeDaysPTime);
 
     FileManager *fileManager = new FileManager();
     vector<File> allFiles = fileManager->listFilesInPath(filesDir);
     vector<File> oldFiles = fileManager->getOldFiles(oldDate, allFiles);
 
+    if(oldFiles.size() != 0){
+       fileManager->moveFilesToFolder(oldFiles, destPath);
+
+    }
+
+
+
     if(fileManager == NULL){
         return 0;
     }else{
-       // cout << "HellO" << oldFiles;
         delete fileManager;
         return 1;
     }

@@ -15,9 +15,9 @@ class FileManager{
 
 public:
     std::vector<File> listFilesInPath(const char *folderPath);
-    char *getLastOpenedTime(const char *filePath);
+    std::string getLastOpenedTime(const char *filePath);
     std::vector<File> getOldFiles(std::string oldDate, std::vector<File> files);
-    bool moveFilesToFolder(std::string *fileNames, int size, std::string folderPath);
+    bool moveFilesToFolder(std::vector<File> files, std::string folderPath);
 };
 
 #endif //FILEMANAGER_H
