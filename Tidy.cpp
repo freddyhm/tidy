@@ -1,7 +1,7 @@
 #include <dirent.h>
 #include <sys/stat.h>
 #include <iostream>
-#include "FileManager.cpp"
+#include "FileManager.h"
 
 using namespace std;
 

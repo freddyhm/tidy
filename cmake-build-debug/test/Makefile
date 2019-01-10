@@ -263,6 +263,87 @@ TidyTests.cpp.s:
 	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/TidyTests.cpp.s
 .PHONY : TidyTests.cpp.s
 
+__/File.o: __/File.cpp.o
+
+.PHONY : __/File.o
+
+# target to build an object file
+__/File.cpp.o:
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/__/File.cpp.o
+.PHONY : __/File.cpp.o
+
+__/File.i: __/File.cpp.i
+
+.PHONY : __/File.i
+
+# target to preprocess a source file
+__/File.cpp.i:
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/__/File.cpp.i
+.PHONY : __/File.cpp.i
+
+__/File.s: __/File.cpp.s
+
+.PHONY : __/File.s
+
+# target to generate assembly for a file
+__/File.cpp.s:
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/__/File.cpp.s
+.PHONY : __/File.cpp.s
+
+__/FileManager.o: __/FileManager.cpp.o
+
+.PHONY : __/FileManager.o
+
+# target to build an object file
+__/FileManager.cpp.o:
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/__/FileManager.cpp.o
+.PHONY : __/FileManager.cpp.o
+
+__/FileManager.i: __/FileManager.cpp.i
+
+.PHONY : __/FileManager.i
+
+# target to preprocess a source file
+__/FileManager.cpp.i:
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/__/FileManager.cpp.i
+.PHONY : __/FileManager.cpp.i
+
+__/FileManager.s: __/FileManager.cpp.s
+
+.PHONY : __/FileManager.s
+
+# target to generate assembly for a file
+__/FileManager.cpp.s:
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/__/FileManager.cpp.s
+.PHONY : __/FileManager.cpp.s
+
+__/Tidy.o: __/Tidy.cpp.o
+
+.PHONY : __/Tidy.o
+
+# target to build an object file
+__/Tidy.cpp.o:
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/__/Tidy.cpp.o
+.PHONY : __/Tidy.cpp.o
+
+__/Tidy.i: __/Tidy.cpp.i
+
+.PHONY : __/Tidy.i
+
+# target to preprocess a source file
+__/Tidy.cpp.i:
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/__/Tidy.cpp.i
+.PHONY : __/Tidy.cpp.i
+
+__/Tidy.s: __/Tidy.cpp.s
+
+.PHONY : __/Tidy.s
+
+# target to generate assembly for a file
+__/Tidy.cpp.s:
+	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/__/Tidy.cpp.s
+.PHONY : __/Tidy.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -313,6 +394,15 @@ help:
 	@echo "... TidyTests.o"
 	@echo "... TidyTests.i"
 	@echo "... TidyTests.s"
+	@echo "... __/File.o"
+	@echo "... __/File.i"
+	@echo "... __/File.s"
+	@echo "... __/FileManager.o"
+	@echo "... __/FileManager.i"
+	@echo "... __/FileManager.s"
+	@echo "... __/Tidy.o"
+	@echo "... __/Tidy.i"
+	@echo "... __/Tidy.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

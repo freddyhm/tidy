@@ -1,8 +1,10 @@
+
 #include "gtest/gtest.h"
 #include <string>
-#include "../File.cpp"
 #include <stdio.h>
 #include <fstream>
+#include "File.h"
+
 
 using namespace std;
 using namespace testing;

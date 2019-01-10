@@ -382,6 +382,21 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/fhm-capra/Desktop/Projects/Tidy/File.cpp">
+			<Option target="TidyTestAll"/>
+		</Unit>
+		<Unit filename="/home/fhm-capra/Desktop/Projects/Tidy/File.h">
+			<Option target="TidyTestAll"/>
+		</Unit>
+		<Unit filename="/home/fhm-capra/Desktop/Projects/Tidy/FileManager.cpp">
+			<Option target="TidyTestAll"/>
+		</Unit>
+		<Unit filename="/home/fhm-capra/Desktop/Projects/Tidy/FileManager.h">
+			<Option target="TidyTestAll"/>
+		</Unit>
+		<Unit filename="/home/fhm-capra/Desktop/Projects/Tidy/Tidy.cpp">
+			<Option target="TidyTestAll"/>
+		</Unit>
 		<Unit filename="/home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/googletest-src/googlemock/src/gmock-all.cc">
 			<Option target="gmock"/>
 		</Unit>

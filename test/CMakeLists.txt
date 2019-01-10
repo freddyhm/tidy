@@ -1,7 +1,6 @@
 include_directories("${PROJECT_SOURCE_DIR}")
 
-add_executable(TidyTestAll main.cpp FileManagerTests.cpp FileTests.cpp TidyTests.cpp)
+set(SOURCE_FILES main.cpp ../File.cpp ../FileManager.cpp ../Tidy.cpp)
+add_executable(TidyTestAll ${SOURCE_FILES} main.cpp FileTests.cpp FileManagerTests.cpp TidyTests.cpp)
 target_link_libraries(TidyTestAll gtest gmock_main)
-
-add_test(NAME TidyTest_all COMMAND TidyTests)
 
