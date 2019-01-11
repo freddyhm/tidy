@@ -48,10 +48,10 @@ RM = /opt/clion-2018.2.6/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fhm-capra/Desktop/Projects/Tidy
+CMAKE_SOURCE_DIR = /home/fhm-capra/Desktop/Tidy
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug
+CMAKE_BINARY_DIR = /home/fhm-capra/Desktop/Tidy/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fhm-capra/Desktop/Tidy/cmake-build-debug/CMakeFiles /home/fhm-capra/Desktop/Tidy/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fhm-capra/Desktop/Tidy/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -596,6 +596,19 @@ TidyTestAll/fast:
 	$(MAKE) -f test/CMakeFiles/TidyTestAll.dir/build.make test/CMakeFiles/TidyTestAll.dir/build
 .PHONY : TidyTestAll/fast
 
+#=============================================================================
+# Target rules for targets named Tidy
+
+# Build rule for target.
+Tidy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Tidy
+.PHONY : Tidy
+
+# fast build rule for target.
+Tidy/fast:
+	$(MAKE) -f test/CMakeFiles/Tidy.dir/build.make test/CMakeFiles/Tidy.dir/build
+.PHONY : Tidy/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -642,6 +655,7 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... TidyTestAll"
+	@echo "... Tidy"
 .PHONY : help
 
 

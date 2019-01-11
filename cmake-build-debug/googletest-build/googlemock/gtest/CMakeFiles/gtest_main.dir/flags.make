@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -Wall -Wshadow -Werror -DGTEST_HAS_PTHREAD=1 -fexceptions -Wext
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -isystem /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/googletest-src/googletest/include -isystem /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/googletest-src/googletest 
+CXX_INCLUDES = -isystem /home/fhm-capra/Desktop/Tidy/cmake-build-debug/googletest-src/googletest/include -isystem /home/fhm-capra/Desktop/Tidy/cmake-build-debug/googletest-src/googletest 
 

@@ -43,10 +43,10 @@ RM = /opt/clion-2018.2.6/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fhm-capra/Desktop/Projects/Tidy
+CMAKE_SOURCE_DIR = /home/fhm-capra/Desktop/Tidy
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug
+CMAKE_BINARY_DIR = /home/fhm-capra/Desktop/Tidy/cmake-build-debug
 
 # Utility rule file for ContinuousMemCheck.
 
@@ -71,6 +71,6 @@ CMakeFiles/ContinuousMemCheck.dir/clean:
 .PHONY : CMakeFiles/ContinuousMemCheck.dir/clean
 
 CMakeFiles/ContinuousMemCheck.dir/depend:
-	cd /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fhm-capra/Desktop/Projects/Tidy /home/fhm-capra/Desktop/Projects/Tidy /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug/CMakeFiles/ContinuousMemCheck.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/fhm-capra/Desktop/Tidy/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fhm-capra/Desktop/Tidy /home/fhm-capra/Desktop/Tidy /home/fhm-capra/Desktop/Tidy/cmake-build-debug /home/fhm-capra/Desktop/Tidy/cmake-build-debug /home/fhm-capra/Desktop/Tidy/cmake-build-debug/CMakeFiles/ContinuousMemCheck.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ContinuousMemCheck.dir/depend
 

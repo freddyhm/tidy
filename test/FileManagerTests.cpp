@@ -2,7 +2,7 @@
 #include "gmock/gmock.h"
 #include <string>
 #include "../FileManager.h"
-#include <stdio.h>
+#include <cstdio.h>
 #include <fstream>
 
 using namespace std;
@@ -51,5 +51,5 @@ TEST_F(MockFileManager, MoveFilesToFolder){
 
     string destPath = "/home/fhm-capra/Desktop/FilesTest2/";
 
-    EXPECT_EQ(fileManager.moveFilesToFolder(files, destPath), true);
+    EXPECT_EQ(fileManager.moveFilesToFolder(files, destPath), 0);
 }

@@ -3,11 +3,6 @@
 #include <string>
 #include <dirent.h>
 #include <sys/stat.h>
-#include <iostream>
-#include <iomanip>
-#include <ctime>
-#include <sstream>
-#include <cstdio>
 #include <boost/date_time/posix_time/posix_time.hpp>
 
 
@@ -23,11 +18,11 @@ vector<File> FileManager::listFilesInPath(const char *folderPath){
     struct dirent *entry;
     vector<File> files;
 
-    while((entry = readdir(dir)) != NULL){
+    while((entry = readdir(dir)) != nullptr){
         if(entry->d_name[0] != '.'){
             string fileName = string(entry->d_name);
             string fullPath = string(folderPath) + fileName;
-            files.push_back(File(fileName, getLastOpenedTime(fullPath.c_str())));
+            files.emplace_back(File(fileName, getLastOpenedTime(fullPath.c_str())));
         }
     }
 
@@ -73,13 +68,15 @@ vector<File> FileManager::getOldFiles(string oldDate, vector<File> files){
     return oldFiles;
 }
 
-bool FileManager::moveFilesToFolder(vector<File> files, string folderPath){
+int FileManager::moveFilesToFolder(vector<File> files, string folderPath){
+
+    int result = 0;
 
     for(int i = 0; i < files.size(); i++){
         string newPath = folderPath + files[i].getName();
         string currentPath = "/home/fhm-capra/Desktop/" + files[i].getName();
-        rename(currentPath.c_str(), newPath.c_str());
+        result += rename(currentPath.c_str(), newPath.c_str());
     }
 
-    return true;
+    return result;
 }

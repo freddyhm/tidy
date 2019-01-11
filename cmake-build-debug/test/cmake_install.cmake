@@ -1,4 +1,4 @@
-# Install script for directory: /home/fhm-capra/Desktop/Projects/Tidy/test
+# Install script for directory: /home/fhm-capra/Desktop/Tidy/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

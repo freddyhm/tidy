@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/fhm-capra/Desktop/Projects/Tidy
-BuildDirectory: /home/fhm-capra/Desktop/Projects/Tidy/cmake-build-debug
+SourceDirectory: /home/fhm-capra/Desktop/Tidy
+BuildDirectory: /home/fhm-capra/Desktop/Tidy/cmake-build-debug
 
 # Where to place the cost data store
 CostDataFile: 
@@ -36,7 +36,7 @@ ScpCommand: /usr/bin/scp
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/opt/clion-2018.2.6/bin/cmake/linux/bin/cmake" "/home/fhm-capra/Desktop/Projects/Tidy"
+ConfigureCommand: "/opt/clion-2018.2.6/bin/cmake/linux/bin/cmake" "/home/fhm-capra/Desktop/Tidy"
 MakeCommand: /opt/clion-2018.2.6/bin/cmake/linux/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
