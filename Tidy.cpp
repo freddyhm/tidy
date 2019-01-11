@@ -7,9 +7,10 @@ int main()
 {
     const char *filesDir = "/home/fhm-capra/Desktop/";
     const std::string destPath = "/home/fhm-capra/Desktop/OldFiles/";
+    const int NUM_DAYS_OLD = 5;
 
     time_t now = time(0);
-    boost::gregorian::days dd(0);
+    boost::gregorian::days dd(NUM_DAYS_OLD);
 
     // set the defining date to consider a file old or recent
     boost::posix_time::ptime nowPTime = boost::posix_time::from_time_t(now);
